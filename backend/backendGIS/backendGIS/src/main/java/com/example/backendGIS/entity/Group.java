@@ -1,5 +1,6 @@
 package com.example.backendGIS.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -15,6 +16,7 @@ public class Group {
     @Column
     private String description;
     @OneToMany(mappedBy = "group")
+    @JsonManagedReference
     private List<User> users;
 
     public Group() {

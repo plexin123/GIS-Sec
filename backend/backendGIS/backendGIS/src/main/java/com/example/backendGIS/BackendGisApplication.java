@@ -8,7 +8,7 @@ public class BackendGisApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BackendGisApplication.class, args);
-		System.out.print("System");
+		System.out.print("The System has started");
 	}
 
 }

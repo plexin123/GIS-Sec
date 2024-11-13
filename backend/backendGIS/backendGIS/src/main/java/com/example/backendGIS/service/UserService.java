@@ -1,6 +1,10 @@
 package com.example.backendGIS.service;
+import com.example.backendGIS.dto.UserDTO;
 import com.example.backendGIS.entity.Group;
+
+import com.example.backendGIS.entity.User_states;
 import com.example.backendGIS.repository.GroupRepository;
+import com.example.backendGIS.repository.UserStateRepository;
 import org.springframework.dao.DataAccessException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import com.example.backendGIS.entity.User;
@@ -9,12 +13,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.InvalidIsolationLevelException;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class UserService {
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private UserStateRepository userStateRepository;
     @Autowired
     private BCryptPasswordEncoder encoder;
     @Autowired
@@ -30,10 +39,25 @@ public class UserService {
         if(existingUser.isPresent()){
             throw new IllegalStateException("The username already exists");
         }
-        user.setPassword(encoder.encode(user.getPassword()));
+        //user.setPassword(encoder.encode(user.getPassword()));
+        user.setPassword(user.getPassword());
+        User_states user_state = new User_states();
+        user_state.setUserId(user.getId());
+        user_state.setActive(true);
+        user_state.setDeleted(false);
+        userStateRepository.save(user_state);
         //set the respective role in the database;
-
         return userRepository.save(user);
+    }
+    //GET All USERS
+    public List<UserDTO> getUsers(){
+        return userRepository.findAll().stream()
+                .map(user -> new UserDTO(
+                        user.getId(),
+                        user.getUsername(),
+                        user.getPassword(),
+                        user.getGroup() !=null ? user.getGroup().getId() : null))
+                .collect(Collectors.toList());
     }
     //GET USER
     public User getUser(String username, String password) {
@@ -48,7 +72,7 @@ public class UserService {
             User actualUser = user.get();
 
             // Check if the password matches the hashed password
-            if (!encoder.matches(password, actualUser.getPassword())) {
+            if (!password.equals(actualUser.getPassword())) {
                 throw new IllegalStateException("The password is incorrect");
             }
 
