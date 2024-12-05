@@ -1,0 +1,147 @@
+.user-management {
+  max-width: 800px;
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add some depth to the container */
+}
+
+.user-management h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px; /* Increased spacing */
+}
+
+form input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #fafafa;
+  color: #333;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus {
+  border-color: #007bff; /* Change border color on focus */
+  outline: none;
+}
+
+form button {
+  background-color: #333;
+  color: #fafafa;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 180px; /* Slightly larger button */
+  align-self: center;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #555;
+}
+
+/* User List */
+.user-list {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.user-list-header,
+.user-item {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 1fr 1fr; /* Add a fifth column for the last button */
+  align-items: center;
+  gap: 15px;
+}
+
+.user-list-header {
+  font-weight: bold;
+  color: #444;
+  padding: 12px 0;
+  border-bottom: 2px solid #ddd;
+  text-align: left;
+  background-color: #f1f1f1; /* Slightly shaded header for distinction */
+}
+
+.user-item {
+  padding: 12px 0;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-item:hover {
+  background-color: #eaeaea;
+}
+
+.user-item span {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.user-item button {
+  background-color: #888;
+  color: #f8f8f8;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 140px; /* Slightly wider buttons */
+}
+
+.user-item button:hover {
+  background-color: #666;
+}
+
+/* Ensure buttons are spaced evenly */
+.user-item button:first-child {
+  margin-right: 10px;
+}
+
+.user-item button:last-child {
+  margin-left: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .user-management {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  .user-list-header,
+  .user-item {
+    grid-template-columns: 1fr 1fr; /* Stack columns on smaller screens */
+  }
+
+  .user-item button {
+    max-width: 100%; /* Ensure buttons take full width on small screens */
+  }
+}

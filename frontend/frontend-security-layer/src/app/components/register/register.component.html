@@ -1,0 +1,94 @@
+<div class="register-container">
+
+      <h2>Register</h2>
+    
+    
+      <form (ngSubmit)="register()">
+    
+        <div class="form-group">
+    
+          <label for="username">Username</label>
+    
+          <input
+    
+            type="text"
+    
+            id="username"
+    
+            name="first"
+    
+            [(ngModel)]="username"
+    
+            class="form-control"
+    
+          />
+    
+        </div>
+    
+      
+    
+        <div class="form-group">
+    
+          <label for="password">Password</label>
+    
+          <input
+    
+            type="password"
+    
+            id="password"
+    
+            name="second"
+    
+            [(ngModel)]="password"
+    
+            class="form-control"
+    
+          />
+    
+        </div>
+
+        <div class="form-group">
+    
+              <label for="group_id">GroupId</label>
+        
+              <input
+        
+                type="number"
+        
+                id="group_id"
+        
+                name="second"
+        
+                [(ngModel)]="groupId"
+        
+                class="form-control"
+
+        
+        
+              />
+
+        <div *ngIf="groupId <= 0" class="error-message">
+            Group ID must be a positive number.
+          </div>
+        
+            </div>
+    
+      
+    
+        <div *ngIf="errorMessage" class="error-message">
+    
+          {{ errorMessage }}
+    
+        </div>
+    
+      
+    
+        <button type="submit" class="btn btn-primary">Register</button>
+    
+      </form>
+    
+      
+    
+
+    
+    </div>

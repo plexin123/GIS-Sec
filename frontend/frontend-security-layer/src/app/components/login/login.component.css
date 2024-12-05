@@ -1,0 +1,74 @@
+/* Estilos para el contenedor principal */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajusta esto según sea necesario */
+    background-color: #f5f5f5; /* Color de fondo claro */
+  }
+  
+  /* Estilos para el cuadro de inicio de sesión */
+  .login-box {
+    background-color: white; /* Color de fondo del cuadro */
+    padding: 40px 30px; /* Espaciado interno */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9); /* Sombra para efecto de elevación */
+    width: 300px; /* Ancho fijo del cuadro */
+  }
+  
+  /* Estilo del encabezado */
+  .login-box h2 {
+    margin-bottom: 20px;
+    color: #333; /* Color del texto */
+    font-family: 'Arial', sans-serif; /* Tipo de letra moderno */
+    text-align: center; /* Centra el texto */
+  }
+  
+  /* Estilo para los grupos de formularios */
+  .form-group {
+    margin-bottom: 15px;
+    width: 100%; /* Asegura que el formulario ocupe todo el ancho */
+  }
+  
+  /* Estilo de los inputs */
+  .form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%; /* Asegura que el input ocupe todo el ancho */
+    font-family: 'Arial', sans-serif; /* Tipo de letra para los inputs */
+  }
+  
+  /* Estilo del mensaje de error */
+  .error-message {
+    color: red;
+    margin-top: 10px;
+    text-align: center; /* Centra el mensaje de error */
+  }
+  
+  /* Estilo del botón de inicio de sesión */
+  .btn {
+    background-color: #f39c12; /* Color mostaza */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* Botón ocupa todo el ancho */
+  }
+  
+  /* Estilo para el efecto hover en el botón */
+  .btn:hover {
+    background-color: #e67e22; /* Un tono más oscuro al pasar el mouse */
+  }
+  
+  /* Estilo del enlace de registro */
+  p {
+    margin-top: 15px;   
+    color: #666; /* Color del texto */
+    text-align: center; /* Centra el texto del enlace */
+    font-family: 'Arial', sans-serif; /* Tipo de letra para el párrafo */
+  }
+  

@@ -1,0 +1,26 @@
+<nav class="navbar" *ngIf="showNavbar">
+  <!-- Left Section (Navigation Links) -->
+  <ul class="nav-left">
+    <li><a (click)="StudentList()">Student List</a></li>
+    <li>
+      <a (click)="toggleDropdown()" class="dropdown-toggle">Security</a>
+      <div class="dropdown" *ngIf="isDropdownOpen">
+        <ul>
+          <li><a (click)="Users()">User</a></li>
+          <li><a routerLink="/security/studentList" routerLinkActive="active">List of Applications</a></li>
+          <li><a routerLink="/security/roles" routerLinkActive="active">Groups/Roles</a></li>
+          <li><a routerLink="/security/group-user" routerLinkActive="active">Groups/Users</a></li>
+          <li><a routerLink="/security/group-applications" routerLinkActive="active">Groups/Applications</a></li>
+          <li><a routerLink="/security/changePassword" routerLinkActive="active">Change Password</a></li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+
+  <!-- Right Section (User Info and Logout) -->
+  <div class="nav-right">
+    <span class="current-user">{{ currentUser }}</span>
+    <button (click)="logout()" class="logout-button">Log Out</button>
+  </div>
+
+</nav>

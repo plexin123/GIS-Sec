@@ -1,0 +1,68 @@
+/* Minimalist Black-and-White Styles */
+.register-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .register-container h2 {
+    margin-bottom: 20px;
+    color: #000;
+    font-size: 24px;
+  }
+  
+  .register-container .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .register-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #000;
+  }
+  
+  .register-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .register-container input:focus {
+    border-color: #000;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .register-container .btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .register-container .btn:hover {
+    background-color: #444;
+  }
+  
+  .register-container .error-message {
+    color: #000;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  

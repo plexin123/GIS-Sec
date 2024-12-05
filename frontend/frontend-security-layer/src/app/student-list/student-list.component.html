@@ -1,0 +1,51 @@
+<div class="student-management">
+  <h2>Student Management</h2>
+
+  <!-- Action Buttons and Search -->
+  <div class="button-container">
+    <button (click)="addStudent()" class="btn">Add Student</button>
+    <input
+      type="text"
+      [(ngModel)]="searchQuery"
+      placeholder="Search by name or email"
+      (input)="filterStudents()"
+    />
+  </div>
+
+  <!-- Student List -->
+  <div class="student-list">
+    <!-- Table Header -->
+    <div class="student-list-header">
+      <span>First Name</span>
+      <span>Last Name</span>
+      <span>Email</span>
+      <span>Description</span> <!-- New Description Column -->
+      <span>Recommendations</span>
+      <span>Actions</span>
+    </div>
+
+    <!-- Table Rows -->
+    <div *ngFor="let student of paginatedStudents" class="student-item">
+      <span>{{ student.firstName }}</span>
+      <span>{{ student.lastName }}</span>
+      <span>{{ student.email }}</span>
+      <span>{{ student.description || 'No description provided' }}</span>
+      <span>{{ student.recommendation || 'No recommendation yet' }}</span>
+      <div>
+        <button (click)="getRecommendation(student)" class="btn">Get Recommendation</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination Controls -->
+  <div class="pagination">
+    <button (click)="setPage(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }}</span>
+    <button
+      (click)="setPage(currentPage + 1)"
+      [disabled]="currentPage * itemsPerPage >= filteredStudents.length"
+    >
+      Next
+    </button>
+  </div>
+</div>
